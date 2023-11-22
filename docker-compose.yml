@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  fastapi-app:
+    build: .
+    command: gunicorn -k uvicorn.workers.UvicornWorker -c /gunicorn_conf.py main:app
+    volumes:
+      - ./app:/app
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_USER = postgres
+      - POSTGRES_PASSWORD = password
+      - POSTGRES_DB = fastapi_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
