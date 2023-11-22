@@ -11,17 +11,19 @@
 
 3. Перейдите в каталог проекта.
 4. Создайте файл '.env' в корневом каталоге проекта и укажите переменные окружения для подключения к базе данных PostgreSQL:
-```bash
-POSTGRES_USER=<your_user>
-POSTGRES_PASSWORD=<your_password>
-POSTGRES_SERVER=<your_server>
-POSTGRES_PORT=5432
-POSTGRES_DB=<your_db_name>
-```
-5. Запустите приложение с помощью Docker Compose:
-```bash
-docker-compose up --build
-```
+   
+   ```bash
+   POSTGRES_USER=<your_user>
+   POSTGRES_PASSWORD=<your_password>
+   POSTGRES_SERVER=<your_server>
+   POSTGRES_PORT=5432
+   POSTGRES_DB=<your_db_name>
+   ```
+6. Запустите приложение с помощью Docker Compose:
+   
+   ```bash
+   docker-compose up --build
+   ```
 
 ## Работа с API
 
